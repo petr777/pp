@@ -1,6 +1,18 @@
-# test task 2
+# test 
 
-## Usage
+## task 1
+* SQL :
+    ```
+    SELECT clients.id, CONCAT(clients.first_name, ' ', clients.last_name), GROUP_CONCAT(DISTINCT category),  GROUP_CONCAT(product)
+    FROM client_orders
+    JOIN clients ON client_orders.client_id = clients.id
+    JOIN orders  ON client_orders.order_id = orders.id
+    WHERE age BETWEEN 18 and 65
+    GROUP BY client_id
+    HAVING COUNT(client_id) = 2 AND COUNT(DISTINCT category) = 1;
+    ```
+
+## task 2
 
 * Git :
     ```
